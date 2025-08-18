@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
 
 defineProps<{
     project: {
@@ -15,87 +14,99 @@ defineProps<{
         }[]
     } | null
 }>()
+
 </script>
 
 <template>
-    <section class="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark flex">
-        <div v-if="project" class="container mx-auto text-left h-full rounded-4xl shadow-portfolio p-16">
-            
-            <!-- ✅ Titre principal du projet -->
-            <h1 class="text-primary leading-[1.208] font-bold text-5xl mb-4">{{ project.title }}</h1>
-            <h2 class="text-gray-500 leading-[1.208] font-bold text-2xl mb-16">{{ project.category }}</h2>
-            
-            <!-- ✅ SECTIONS DYNAMIQUES -->
-            <div v-for="(section, index) in project.sections" :key="index" class="mb-32">
+    <section class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+        <!-- Project Details -->
+        <div v-if="project" class="container mx-auto">
+            <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg dark:shadow-2xl p-8 sm:p-12 lg:p-16 transition-all duration-300">
                 
-                <!-- 🔄 TYPE 1 : Texte + Image -->
-                <div v-if="section.type === 'text-image'" class="flex flex-col lg:flex-row items-center">
-                    <div class="lg:w-1/2 lg:pr-12">
-                        <h2 class="text-2xl font-semibold mb-4">{{ section.title }}</h2>
-                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                            {{ section.text }}
-                        </p>
-                    </div>
-                    <div class="lg:w-1/2 mt-6 lg:mt-0">
-                        <img :src="section.image" :alt="section.title" class="rounded-lg shadow-md w-full">
-                    </div>
+                <!-- Project Header -->
+                <div class="mb-16">
+                    <span class="text-blue-600 dark:text-blue-400 text-sm font-semibold uppercase tracking-wide mb-4 block transition-colors duration-300">
+                        {{ project.category }}
+                    </span>
+                    <h1 class="text-slate-900 dark:text-white font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-8 transition-colors duration-300">
+                        {{ project.title }}
+                    </h1>
                 </div>
                 
-                <!-- 🔄 TYPE 2 : Image + Texte (inversé) -->
-                <div v-else-if="section.type === 'image-text'" class="flex flex-col lg:flex-row-reverse items-center">
-                    <div class="lg:w-1/2 lg:pl-12">
-                        <h2 class="text-2xl font-semibold mb-4">{{ section.title }}</h2>
-                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                            {{ section.text }}
-                        </p>
+                <!-- Dynamic Sections -->
+                <div v-for="(section, index) in project.sections" :key="index" class="mb-20 last:mb-16">
+                    
+                    <!-- Text + Image Layout -->
+                    <div v-if="section.type === 'text-image'" class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                        <div class="lg:w-1/2 space-y-4">
+                            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white transition-colors duration-300">
+                                {{ section.title }}
+                            </h2>
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-xl transition-colors duration-300 [&_a]:underline [&_a]:text-blue-600 [&_a]:hover:text-blue-700 [&_a]:dark:text-blue-400 [&_a]:dark:hover:text-blue-600" v-html="section.text"></p>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <img 
+                                :src="section.image" 
+                                :alt="section.title" 
+                                class="rounded-xl shadow-lg w-full h-64 sm:h-80 object-cover transition-transform duration-300 hover:scale-105 text-slate-600 dark:text-white"
+                            >
+                        </div>
                     </div>
-                    <div class="lg:w-1/2 mt-6 lg:mt-0">
-                        <img :src="section.image" :alt="section.title" class="rounded-lg shadow-md w-full">
+                    
+                    <!-- Image + Text Layout (Reversed) -->
+                    <div v-else-if="section.type === 'image-text'" class="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12">
+                        <div class="lg:w-1/2 space-y-4">
+                            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white transition-colors duration-300">
+                                {{ section.title }}
+                            </h2>
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-xl transition-colors duration-300" v-html="section.text"></p>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <img 
+                                :src="section.image" 
+                                :alt="section.title" 
+                                class="rounded-xl shadow-lg w-full h-64 sm:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                            >
+                        </div>
                     </div>
+                    
+                    <!-- Highlight Section -->
+                    <div v-else-if="section.type === 'p'" class="text-center max-w-3xl mx-auto">
+                        <div class="w-16 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-6 rounded-full"></div>
+                        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
+                            {{ section.title }}
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-xl transition-colors duration-300" v-html="section.text"></p>
+                        <div class="w-16 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mt-6 rounded-full"></div>
+                    </div>
+                    
                 </div>
                 
-                <!-- 🔄 TYPE 3 : Highlight (titre + texte court centré avec séparateurs) -->
-                <div v-else-if="section.type === 'p'" class="text-center max-w-3xl mx-auto">
-                    
-                    <!-- Séparateur du dessus -->
-                    <div class="w-12 h-[2px] bg-primary mx-auto mb-4 rounded-full"></div>
-                    
-                    <!-- Titre -->
-                    <h2 class="text-2xl font-bold mb-2">{{ section.title }}</h2>
-                    
-                    <!-- Texte -->
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">
-                        {{ section.text }}
-                    </p>
-                    
-                    <!-- Séparateur du dessous -->
-                    <div class="w-12 h-[2px] bg-primary mx-auto mt-4 rounded-full"></div>
-                    
+                <!-- Back Button -->
+                <div class="flex justify-center pt-8 border-t border-slate-200 dark:border-slate-700">
+                    <button 
+                        @click="$emit('change-view', 'Portfolio')" 
+                        class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-base font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    >
+                        {{ $t('text.back_to_portfolio') }}
+                    </button>
                 </div>
-                
             </div>
-            <!-- ✅ FIN SECTIONS -->
-            
-            <!-- ✅ Bouton retour -->
-            <button 
-            @click="$emit('change-view', 'Portfolio')" 
-            class="bg-primary text-white m-1 inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8">
-            Back
-        </button>
-    </div>
-    
-    <!-- ✅ Cas projet introuvable -->
-    <div v-else>
-        <div class="container mx-auto text-center h-full">
-            <div class="mb-8">
-                <h1 class="text-dark leading-[1.208] font-bold text-6xl">Project not found.</h1>
+        </div>
+        
+        <!-- Project Not Found -->
+        <div v-else class="container mx-auto text-center">
+            <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg dark:shadow-2xl p-8 sm:p-12 transition-all duration-300">
+                <h1 class="text-slate-900 dark:text-white font-bold text-4xl sm:text-5xl lg:text-6xl mb-8 transition-colors duration-300">
+                    {{ $t('text.proj_not_found') }}
+                </h1>
+                <button 
+                    @click="$emit('change-view', 'Portfolio')" 
+                    class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-base font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                    {{ $t('text.back_to_portfolio') }}
+                </button>
             </div>
-            <button 
-            @click="$emit('change-view', 'Portfolio')" 
-            class="bg-primary text-white m-1 inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8">
-            Back
-        </button>
-    </div>
-</div>
-</section>
+        </div>
+    </section>
 </template>

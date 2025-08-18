@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
 @theme {
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-secondary: #64748b;
   
+  --color-dark: #1e293b;
+  --color-dark-2: #334155;
+  --color-dark-3: #475569;
+  --color-dark-6: #94a3b8;
+  
+  --color-body: #64748b;
+  --color-stroke: #e2e8f0;
+  
+  --shadow-portfolio: 0 4px 25px rgba(0, 0, 0, 0.08);
+  --shadow-box-dark: 0 4px 25px rgba(0, 0, 0, 0.15);
+  
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-4xl: 2rem;
+  
+  --animation-duration-200: 200ms;
+  --animation-duration-300: 300ms;
 }

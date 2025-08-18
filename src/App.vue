@@ -13,10 +13,10 @@ const components = {
 }
 
 const currentComponent = ref<ViewName>('Lander')
-
 const selectedProject = ref<any | null>(null)
 
 function handleChangeView(next: ViewName, payload?: any) {
+    window.scrollTo(0,0);
     if (components[next]) {
         currentComponent.value = next
         if (payload) {
@@ -26,9 +26,14 @@ function handleChangeView(next: ViewName, payload?: any) {
         console.warn(`"${next}" not found`)
     }
 }
-
 </script>
 
 <template>
-    <component :is="components[currentComponent]" @change-view="handleChangeView" :project="selectedProject" class="bg-cover min-w-screen min-h-screen" />
+    <div class="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
+        <component 
+            :is="components[currentComponent]" 
+            @change-view="handleChangeView" 
+            :project="selectedProject" 
+        />
+    </div>
 </template>
