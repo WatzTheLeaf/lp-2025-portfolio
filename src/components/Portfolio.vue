@@ -6,6 +6,7 @@ import bortechI from '../assets/borealis-tech.jpg'
 import borgameI from '../assets/borealis-game.jpg'
 import islefrontI from '../assets/isle_front.jpg'
 import islebiomeI from '../assets/isle_biomes.jpg'
+import islefrontbiome from '../assets/isle_biomes_editor.jpg'
 
 interface ProjectItem {
     image: string
@@ -15,6 +16,8 @@ interface ProjectItem {
     keypoints: string[]
     sections: ProjectSection[]
     role: string
+    linktext: string
+    link: string
 }
 
 interface ProjectSection {
@@ -27,41 +30,43 @@ interface ProjectSection {
 const portfolioItems = ref<ProjectItem[]>([
     {
         image: islefrontI,
-        category: "Démonstrations",
+        category: "Jeux vidéo",
         title: "Éditeur d'îles flottantes",
         buttonText: "Voir +",
-        keypoints: ["Unreal Engine 5", "Custom Editor Mode", "Compute Shader HLSL", "Génération procédurale", "En cours de développement"],
+        keypoints: ["Unreal Engine 5", "Custom Editor Mode", "Compute Shader", "Génération procédurale"],
         sections: [
             {
                 type: "p",
                 image: "",
-                text: "J'ai commencé ce projet avec pour objectif de me confronter à des parties <b>plus avancées</b> du développement avec Unreal Engine 5, tout en travaillant le <b>développement d'outils</b>. L'objectif final est de proposer un mode éditeur custom, permettant la création d'un niveau rempli d'îles flottantes procédurales, de leur assigner un biome, et de générer leur décoration. D'un point de vue purement technique, je veux travailler avec les extensions d'éditeur, les <b>compute shaders</b>, les <b>meshs procéduraux</b>, et <b>Unreal PCG</b>. Le tout est empaqueté dans un plugin.",
+                text: "J'ai commencé ce projet pour me confronter à des parties <b>plus avancées</b> du développement avec Unreal Engine 5, tout en travaillant le <b>développement d'outils</b>. L'objectif est de proposer un mode éditeur custom, permettant la création d'un niveau rempli d'îles flottantes procédurales, et de leur assigner un biome sous forme de tag. D'un point de vue purement technique, je veux travailler avec les <b>extensions d'éditeur</b>, les <b>compute shaders</b>, et les <b>meshs procéduraux</b>. Le tout est empaqueté dans un plugin disponible sur <a href='https://github.com/WatzTheLeaf/IslesGenPlugin'>GitHub</a>.",
                 title: "Le but du projet"
             },
             {
                 type: 'text-image',
-                image: islefrontI,
+                image: islefrontbiome,
                 text: "La première étape consiste à créer un <b>mode éditeur personnalisé</b> permettant de générer les îles, ainsi que l'acteur représentant une île, <b>généré procéduralement</b> en se basant sur des paramètres donnés. Le but est de rendre le tout le plus simple possible, pour permettre à n'importe qui d'utiliser l'outil. L'outil prend lui aussi des paramètres afin de définir la taille de la carte par exemple.",
                 title: "Le Mode Editeur Custom"
             },
             {
                 type: "image-text",
                 image: islebiomeI,
-                text: "Dans un second temps, on utilise un <b>compute shader</b> pour générer un bruit de <b>Voronoi custom</b>, selon des paramètres voulus. On utilisera ensuite une mise à l'échelle de cette texture sur le niveau pour <b>déterminer le biome</b> de chaque île. Une fois le biome assigné, on pourra passer à l'étape suivante, la génération avec Unreal PCG.",
+                text: "Dans un second temps, on utilise un <b>compute shader</b> pour générer un bruit de <b>Voronoi custom</b>, selon des paramètres voulus. On utilisera ensuite une mise à l'échelle de cette texture sur le niveau pour <b>déterminer le biome</b> de chaque île. Un second menu permet de visualiser et assigner les biomes en fonction de la texture créée.",
                 title: "La génération des biomes"
             },
             {
                 type:  "p",
                 image: "",
-                text: "Je travaille actuellement sur ce projet, les prochaines parties et des améliorations des existantes arriveront bientôt !",
-                title: "À suivre ..."
+                text: "À partir de ce point, une carte formée de meshs est générée et il est possible de l'utiliser comme bon nous semble. On peut, par exemple, convertir les meshs en version statique et les décorer avec Unreal PCG. L'outil permet de générer beaucoup d'îles en même temps, ce qui permet de gagner du temps tout en gardant le contrôle de la génération.",
+                title: ""
             }
         ],
-        role: "Programmeur (Tool)"
+        role: "Programmeur (Tool)",
+        linktext: "Source",
+        link: "https://github.com/WatzTheLeaf/IslesGenPlugin"
     },
     {
         image: "https://img.itch.zone/aW1nLzIwMTEwMDc3LnBuZw==/315x250%23c/gsWjDJ.png",
-        category: "Jams",
+        category: "Jeux vidéo",
         title: "WonderJam - Soundbound",
         buttonText: "Voir +",
         keypoints: ["Unreal Engine", "Travail d'équipe", "Jouable"],
@@ -85,11 +90,13 @@ const portfolioItems = ref<ProjectItem[]>([
                 image: "https://img.itch.zone/aW1hZ2UvMzM2Nzc1Mi8yMDEwOTYxOS5wbmc=/original/nf%2BzOH.png"
             }
         ],
-        role: "Artiste & Programmeur"
+        role: "Artiste & Programmeur",
+        linktext: "Essayer",
+        link: "https://oridoshi.itch.io/soundboundwdjh2025"
     },
     {
         image: "https://img.itch.zone/aW1nLzE5NzUwNTk1LnBuZw==/original/ugzNc%2B.png",
-        category: "Projets d'étude",
+        category: "Jeux vidéo",
         title: "Borealis",
         buttonText: "Voir +",
         keypoints: ["Unreal Engine", "Travail en équipe pluridisciplinaire", "Prototype jouable"],
@@ -113,7 +120,9 @@ const portfolioItems = ref<ProjectItem[]>([
                 text: "Dans un second temps, alors que le projet avance, nous sommes contraints de <b>réorganiser le fonctionnement de l'équipe</b> suite à certaines difficultés. Mon <b>nouveau rôle</b> est beaucoup plus général, et comprend la responsabilité des <b>builds</b>. Je réalise une partie de l'<b>intégration</b>, la <b>détection</b> et <b>correction des bugs</b> et des <b>problèmes d'optimisation</b>. Je suis également en charge d'assurer le <b>support</b> et la <b>communication avec les artistes</b> au besoin."
             }
         ],
-        role: "Programmeur"
+        role: "Programmeur",
+        linktext: "Essayer",
+        link: "https://tomdouaud.itch.io/borealis"
     }
 ])
 const selectedCategory = ref<string>('All')
@@ -144,8 +153,82 @@ const filterItems = () => {
 
 <template>
     <section class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+
+        <!-- About Me Section -->
+        <div class="container mx-auto">
+            <div class="bg-white dark:bg-slate-800 p-8 sm:p-12 lg:p-16 mb-20 lg:mb-32 rounded-2xl shadow-lg dark:shadow-2xl transition-all duration-300">
+                <!-- About Me Highlight -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
+                        {{$t('text.about_me')}}
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-300 text-base sm:text-xl leading-relaxed transition-colors duration-300">
+                        {{$t('text.about_me_desc')}}
+                    </p>
+                    <div class="w-16 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mt-6 rounded-full"></div>
+                </div>
+                
+                <!-- About Me Content - Text + Image -->
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mb-16">
+                    <div class="lg:w-1/2 space-y-4">
+                        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white transition-colors duration-300">
+                            {{$t('text.from_passion')}}
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-xl transition-colors duration-300">
+                            {{$t('text.from_passion_desc')}}
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img 
+                            class="rounded-xl shadow-lg w-full h-auto sm:h-80 sm:object-cover transition-transform duration-300 hover:scale-105" 
+                            v-bind:src="papI"
+                            alt="About me image"
+                        >
+                    </div>
+                </div>
+                
+                <!-- About Me Content - Image + Text (Reversed) -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 mb-16">
+                    <div class="lg:w-1/2 space-y-4">
+                        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white transition-colors duration-300">
+                            {{$t('text.to_school')}}
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-xl transition-colors duration-300">
+                            {{$t('text.to_school_desc')}}
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img 
+                            class="rounded-xl shadow-lg w-full h-auto sm:h-80 sm:object-cover transition-transform duration-300 hover:scale-105" 
+                            v-bind:src="univI"
+                            alt="About me image"
+                        >
+                    </div>
+                </div>
+
+                <!-- About Me Content - Outro -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-2xl sm:text-3xl mb-4 font-semibold text-slate-900 dark:text-white transition-colors duration-300">
+                        {{$t('text.and_more')}}
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-300 text-base sm:text-xl leading-relaxed transition-colors duration-300">
+                        {{$t('text.and_more_desc')}}
+                    </p>
+                    <div class="w-16 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mt-6 rounded-full"></div>
+                </div>
+
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <img 
+                            src="https://skillicons.dev/icons?i=git,cpp,cs,rust,tauri,java,spring,python,html,css,js,nodejs,npm,vite,vue,tailwind,threejs,windows,linux,bash,debian,md,docker,sqlite,postgres,unreal,godot,blender,ps,pr&theme=dark"
+                            alt="Techs image"
+                        >
+                </div>
+
+            </div>
+        </div>
+
         <!-- Projects Section -->
-        <div class="container mx-auto mb-20 lg:mb-32 shadow-lg p-8 dark:bg-slate-800 rounded-2xl">
+        <div class="container mx-auto shadow-lg p-8 dark:bg-slate-800 rounded-2xl mb-16 sm:mb-auto">
             <!-- Projects Header -->
             <div class="text-center max-w-2xl mx-auto mb-12">
                 <h2 class="text-slate-900 dark:text-white mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight transition-colors duration-300">
@@ -205,102 +288,10 @@ const filterItems = () => {
                             >
                                 {{ item.buttonText }}
                             </button>
+                            <a :href="item.link" v-if="item.linktext != ''" class="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-blue-600 hover:text-white border border-slate-200 dark:border-slate-600 px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ml-4">{{ item.linktext }}</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- About Me Section -->
-        <div class="container mx-auto">
-            <div class="bg-white dark:bg-slate-800 p-8 sm:p-12 lg:p-16 rounded-2xl shadow-lg dark:shadow-2xl transition-all duration-300">
-                <!-- About Me Highlight -->
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <div class="w-16 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-6 rounded-full"></div>
-                    <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
-                        {{$t('text.about_me')}}
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-base sm:text-xl leading-relaxed transition-colors duration-300">
-                        {{$t('text.about_me_desc')}}
-                    </p>
-                    <div class="w-16 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mt-6 rounded-full"></div>
-                </div>
-                
-                <!-- About Me Content - Text + Image -->
-                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mb-16">
-                    <div class="lg:w-1/2 space-y-4">
-                        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white transition-colors duration-300">
-                            {{$t('text.from_passion')}}
-                        </h2>
-                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-xl transition-colors duration-300">
-                            {{$t('text.from_passion_desc')}}
-                        </p>
-                    </div>
-                    <div class="lg:w-1/2">
-                        <img 
-                            class="rounded-xl shadow-lg w-full h-auto sm:h-80 sm:object-cover transition-transform duration-300 hover:scale-105" 
-                            v-bind:src="papI"
-                            alt="About me image"
-                        >
-                    </div>
-                </div>
-                
-                <!-- About Me Content - Image + Text (Reversed) -->
-                <div class="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 mb-16">
-                    <div class="lg:w-1/2 space-y-4">
-                        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white transition-colors duration-300">
-                            {{$t('text.to_school')}}
-                        </h2>
-                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-xl transition-colors duration-300">
-                            {{$t('text.to_school_desc')}}
-                        </p>
-                    </div>
-                    <div class="lg:w-1/2">
-                        <img 
-                            class="rounded-xl shadow-lg w-full h-auto sm:h-80 sm:object-cover transition-transform duration-300 hover:scale-105" 
-                            v-bind:src="univI"
-                            alt="About me image"
-                        >
-                    </div>
-                </div>
-
-                <!-- About Me Content - Outro -->
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white transition-colors duration-300">
-                        {{$t('text.and_more')}}
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-base sm:text-xl leading-relaxed transition-colors duration-300">
-                        {{$t('text.and_more_desc')}}
-                    </p>
-                    <div class="w-16 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mt-6 rounded-full"></div>
-                </div>
-
-                <!-- About Me Contact Section -->
-                <div class="text-center max-w-3xl mx-auto">
-                    
-                    <!-- Contact Icons -->
-                    <div class="flex flex-wrap justify-center gap-8 p-8 mb-8 rounded-2xl items-center border-2 border-blue-600 dark:border-blue-400">
-
-                        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white">
-                            Contact: 
-                        </h2>
-
-                        <!-- Mail Icon -->
-                        <a href="mailto:pinaud-l@proton.me"
-                        class="text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 transform hover:scale-110 bg-blue-600 dark:bg-blue-400 rounded-xl p-2"
-                        aria-label="Send me an email">
-                            <image src="/mail-pencil.svg" class="h-16 w-16"/>
-                        </a>
-
-                        <!-- LinkedIn Icon -->
-                        <a href="https://www.linkedin.com/in/louis-pinaud" target="_blank" rel="noopener" 
-                        class="text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 transform hover:scale-110 bg-blue-600 dark:bg-blue-400 rounded-xl p-2"
-                        aria-label="Profil LinkedIn">
-                            <image src="/linkedin.svg" class="h-16 w-16"/>
-                        </a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>

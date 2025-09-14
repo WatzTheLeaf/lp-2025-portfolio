@@ -59,7 +59,7 @@ defineProps<{
                             <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white transition-colors duration-300">
                                 {{ section.title }}
                             </h2>
-                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-xl transition-colors duration-300" v-html="section.text"></p>
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-xl transition-colors duration-300 [&_a]:underline [&_a]:text-blue-600 [&_a]:hover:text-blue-700 [&_a]:dark:text-blue-400 [&_a]:dark:hover:text-blue-600" v-html="section.text"></p>
                         </div>
                         <div class="lg:w-1/2">
                             <img 
@@ -76,7 +76,7 @@ defineProps<{
                         <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
                             {{ section.title }}
                         </h2>
-                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-xl transition-colors duration-300" v-html="section.text"></p>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-xl transition-colors duration-300 [&_a]:underline [&_a]:text-blue-600 [&_a]:hover:text-blue-700 [&_a]:dark:text-blue-400 [&_a]:dark:hover:text-blue-600" v-html="section.text"></p>
                         <div class="w-16 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mt-6 rounded-full"></div>
                     </div>
                     
