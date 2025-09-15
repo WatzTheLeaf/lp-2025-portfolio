@@ -32,7 +32,7 @@
         
         <div class="absolute bottom-6 right-6 sm:bottom-8 sm:right-8">
             <h2 class="text-slate-500 dark:text-slate-400 text-sm font-medium transition-colors duration-300">
-                Updated 14-Sep-2025
+                Updated 15-Sep-2025
             </h2>
         </div>
         

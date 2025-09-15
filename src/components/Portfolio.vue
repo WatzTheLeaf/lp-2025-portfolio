@@ -260,7 +260,7 @@ const filterItems = () => {
             </div>
             
             <!-- Portfolio Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10 mb-12">
                 <div v-for="item in filteredItems" :key="item.title" class="group">
                     <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg dark:shadow-2xl transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-xl">
                         <div class="overflow-hidden">
@@ -292,6 +292,12 @@ const filterItems = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="text-center max-w-2xl mx-auto [&_a]:underline [&_a]:text-blue-600 [&_a]:hover:text-blue-700 [&_a]:dark:text-blue-400 [&_a]:dark:hover:text-blue-600">
+                <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg transition-colors duration-300">
+                    {{ $t('text.go_github') }}
+                </p>
+                <a href="https://github.com/WatzTheLeaf" target="_blank">GitHub</a>
             </div>
         </div>
     </section>

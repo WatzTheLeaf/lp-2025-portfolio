@@ -39,7 +39,8 @@ const i18n = createI18n({
                 and_more_desc: "Actuellement, je suis à la recherche d'un CDD / CDI en tant que développeur. Si mon profil vous intéresse, je serais ravi d'échanger avec vous selon vos disponibilités.",
                 about_me_desc: "Je m'appelle Louis. Je suis passionné de nouvelles technologies depuis l'enfance, et ça ne m'est jamais passé ! De mes premiers pas dans le développement à aujourd'hui, je n'ai cessé de me rapprocher de mon objectif : travailler dans la tech en France et participer à la mise en avant de ces savoir-faire. Et oui, je suis plus motivé que jamais !",
                 back_to_portfolio: "← Retour au Portfolio",
-                proj_not_found: "Project introuvable."
+                proj_not_found: "Project introuvable.",
+                go_github: "D'autres projets sont disponibles sur mon"
             }
         }
     }

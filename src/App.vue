@@ -54,11 +54,11 @@ function handleChangeView(next: ViewName, payload?: any) {
                 </a>
 
                 <!-- LinkedIn Icon -->
-                <!--<a href="https://www.linkedin.com/in/louis-pinaud" target="_blank" rel="noopener" 
+                <a href="https://www.linkedin.com/in/louis-pinaud" target="_blank" rel="noopener" 
                 class="text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 transform hover:scale-110 bg-blue-600 dark:bg-blue-400 rounded-xl p-2"
                 aria-label="LinkedIn">
                     <image src="/linkedin.svg" class="h-6 w-6"/>
-                </a>-->
+                </a>
             </div>
         </div>
 
