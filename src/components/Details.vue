@@ -48,7 +48,7 @@ defineProps<{
                             <img 
                                 :src="section.image" 
                                 :alt="section.title" 
-                                class="rounded-xl shadow-lg w-full h-64 sm:h-80 object-cover transition-transform duration-300 hover:scale-105 text-slate-600 dark:text-white"
+                                class="rounded-xl shadow-lg w-full h-64 sm:h-80 object-cover transition-transform duration-300 text-slate-600 dark:text-white"
                             >
                         </div>
                     </div>
@@ -65,7 +65,7 @@ defineProps<{
                             <img 
                                 :src="section.image" 
                                 :alt="section.title" 
-                                class="rounded-xl shadow-lg w-full h-64 sm:h-80 object-cover transition-transform duration-300 hover:scale-105"
+                                class="rounded-xl shadow-lg w-full h-64 sm:h-80 object-cover transition-transform duration-300"
                             >
                         </div>
                     </div>
@@ -86,7 +86,7 @@ defineProps<{
                 <div class="flex justify-center pt-8 border-t border-slate-200 dark:border-slate-700">
                     <button 
                         @click="$emit('change-view', 'Portfolio')" 
-                        class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-base font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                        class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-base font-semibold transition-all duration-200 transform shadow-lg hover:shadow-xl"
                     >
                         {{ $t('text.back_to_portfolio') }}
                     </button>
@@ -102,7 +102,7 @@ defineProps<{
                 </h1>
                 <button 
                     @click="$emit('change-view', 'Portfolio')" 
-                    class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-base font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-base font-semibold transition-all duration-200 transform shadow-lg hover:shadow-xl"
                 >
                     {{ $t('text.back_to_portfolio') }}
                 </button>

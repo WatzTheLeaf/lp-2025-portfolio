@@ -62,7 +62,7 @@ const filterItems = () => {
                     </div>
                     <div class="lg:w-1/2">
                         <img 
-                            class="rounded-xl shadow-lg w-full h-auto sm:h-80 sm:object-cover transition-transform duration-300 hover:scale-105" 
+                            class="rounded-xl shadow-lg w-full h-auto sm:h-80 sm:object-cover transition-transform duration-300" 
                             v-bind:src="papI"
                             alt="About me image"
                         >
@@ -81,7 +81,7 @@ const filterItems = () => {
                     </div>
                     <div class="lg:w-1/2">
                         <img 
-                            class="rounded-xl shadow-lg w-full h-auto sm:h-80 sm:object-cover transition-transform duration-300 hover:scale-105" 
+                            class="rounded-xl shadow-lg w-full h-auto sm:h-80 sm:object-cover transition-transform duration-300" 
                             v-bind:src="univI"
                             alt="About me image"
                         >
@@ -131,7 +131,7 @@ const filterItems = () => {
                         'bg-blue-600 text-white shadow-lg': selectedCategory === category,
                         'text-slate-600 dark:text-slate-400 hover:bg-blue-600 hover:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700': selectedCategory !== category
                     }"
-                    class="px-6 py-2 sm:px-8 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition-all duration-200 transform hover:scale-105"
+                    class="px-6 py-2 sm:px-8 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition-all duration-200 transform hover:scale-105 cursor-pointer"
                 >
                     {{ category }}
                 </button>
@@ -144,7 +144,7 @@ const filterItems = () => {
             <!-- Portfolio Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10 mb-12">
                 <div v-for="item in filteredItems" :key="item.title" class="group">
-                    <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg dark:shadow-2xl transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-xl">
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg dark:shadow-2xl transition-all duration-300 transform group-hover:shadow-xl">
                         <div class="overflow-hidden">
                             <img 
                                 :src="item.image" 
@@ -166,7 +166,7 @@ const filterItems = () => {
                             </ul>
                             <button
                                 @click="$emit('change-view', 'Details', item)"
-                                class="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-blue-600 hover:text-white border border-slate-200 dark:border-slate-600 px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
+                                class="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-blue-600 hover:text-white border border-slate-200 dark:border-slate-600 px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer"
                             >
                                 {{ item.buttonText }}
                             </button>

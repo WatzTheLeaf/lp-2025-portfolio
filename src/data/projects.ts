@@ -4,9 +4,38 @@ import bortechI from '../assets/borealis-tech.jpg'
 import borgameI from '../assets/borealis-game.jpg'
 import islefrontI from '../assets/isle_front.jpg'
 import islebiomeI from '../assets/isle_biomes.jpg'
-import islefrontbiome from '../assets/isle_biomes_editor.jpg'
+import islefrontbiomeI from '../assets/isle_biomes_editor.jpg'
+import snappI from '../assets/sn_test_app.jpg'
 
 export const projects: ProjectItem[] = [
+    {
+        image: snappI,
+        category: "Full-Stack",
+        title: "Prototype de réseau social (en cours)",
+        buttonText: "Voir +",
+        keypoints: ["Web-App", "Application mobile", "API Rest", "Docker"],
+        sections: [
+            {
+                type: "p",
+                title: "Le but du projet",
+                text: "J'ai commencé ce projet pour pouvoir <b>créer une application complète</b>, dans le but de m'exercer à <b>en articuler convenablement les différentes composantes</b>. C'est également l'occasion pour moi de  travailler sur le déploiement de solutions, autant coté dev que prod. Une application type réseau social constitue un  bon exercice et une bonne démonstration, du fait des nombreuses contraintes intrinsèques (gestion des droits, scalabilité, etc...) relatives à leurs utilisations. Cette application comporte <b>5 composantes principales</b> : une application mobile, une web-app, une API rest, une base de donnée relationnelle et un système de stockage-objet."
+            },
+            {
+                type: "text-image",
+                title: "Le concept",
+                text: "L'application \"pas encore nommée\", doit permettre à ses utilisateurs de partager des images, recueillir des réactions, suivre d'autres personnes ... La base d'un réseau social, en fin de compte. Pour pimenter un peu l'expérience, le concept de l'application sera d'articuler l'intégralité de ce qu'il s'y passe autour de la géolocalisation, autant pour les posts que pour les comptes. Comme ce projet est en cours, je ne présente pas encore les détails, mais cela suivra.",
+                image: snappI
+            },
+            {
+                type: "p",
+                title: "Le stack",
+                text: "Ce projet utilise .NET MAUI (application mobile), Vue + Vite (web-app), NestJS (API), MinIO (Object Storage), Postgres (Database). J'utilise aussi PostGIS pour la gestion des données de localisation, en partie TypeORM pour le lien entre l'API / BDD et un JWT pour l'authentification.",
+            }
+        ],
+        role: "Concepteur & Développeur",
+        linktext: "",
+        link: ""
+    },
     {
         image: islefrontI,
         category: "Jeux vidéo",
@@ -16,13 +45,12 @@ export const projects: ProjectItem[] = [
         sections: [
             {
                 type: "p",
-                image: "",
                 text: "J'ai commencé ce projet pour me confronter à des parties <b>plus avancées</b> du développement avec Unreal Engine 5, tout en travaillant le <b>développement d'outils</b>. L'objectif est de proposer un mode éditeur custom, permettant la création d'un niveau rempli d'îles flottantes procédurales, et de leur assigner un biome sous forme de tag. D'un point de vue purement technique, je veux travailler avec les <b>extensions d'éditeur</b>, les <b>compute shaders</b>, et les <b>meshs procéduraux</b>. Le tout est empaqueté dans un plugin disponible sur <a href='https://github.com/WatzTheLeaf/IslesGenPlugin'>GitHub</a>.",
                 title: "Le but du projet"
             },
             {
                 type: 'text-image',
-                image: islefrontbiome,
+                image: islefrontbiomeI,
                 text: "La première étape consiste à créer un <b>mode éditeur personnalisé</b> permettant de générer les îles, ainsi que l'acteur représentant une île, <b>généré procéduralement</b> en se basant sur des paramètres donnés. Le but est de rendre le tout le plus simple possible, pour permettre à n'importe qui d'utiliser l'outil. L'outil prend lui aussi des paramètres afin de définir la taille de la carte par exemple.",
                 title: "Le Mode Editeur Custom"
             },
@@ -34,7 +62,6 @@ export const projects: ProjectItem[] = [
             },
             {
                 type:  "p",
-                image: "",
                 text: "À partir de ce point, une carte formée de meshs est générée et il est possible de l'utiliser comme bon nous semble. On peut, par exemple, convertir les meshs en version statique et les décorer avec Unreal PCG. L'outil permet de générer beaucoup d'îles en même temps, ce qui permet de gagner du temps tout en gardant le contrôle de la génération.",
                 title: ""
             }
@@ -54,7 +81,6 @@ export const projects: ProjectItem[] = [
                 type: "p",
                 title: "Wonderjam d'hiver 2025",
                 text: "La Wonderjam a lieu 2 fois par an à l'Université du Québec à Chicoutimi. En 48h, les équipes de 7 personnes maximum doivent créer un jeu selon un thème commun et 3 contraintes tirées au sort. Le classement est déterminé par un jury mixte formé en partie de professionnels du secteur.",
-                image: ""
             },
             {
                 type: "text-image",
@@ -89,7 +115,6 @@ export const projects: ProjectItem[] = [
             {
                 type: "p",
                 title: "Mon rôle (1ère partie)",
-                image: "",
                 text: "Dans un premier temps, je suis amené à <b>développer des mécaniques de gameplay</b> que l'ensemble des membres ont validées en réunion. Je suis surtout en charge de l'implémentation des plateformes et des portes. À mon arrivée, un peu de code blueprint existait, qu'il m'a fallu <b>traduire en C++, nettoyer et optimiser</b>."
             },
             {
