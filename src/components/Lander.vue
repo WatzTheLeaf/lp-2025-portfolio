@@ -21,7 +21,7 @@
                     {{$t('button.continue')}}
                 </button>
                 
-                <a href="/LOUIS_PINAUD_CV_NS25.pdf" target="_blank"
+                <a href="/LOUIS_PINAUD_CV_Y25.pdf" target="_blank"
                     class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 px-8 py-3 rounded-lg text-base font-semibold transition-colors duration-200 border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-500"
                 >
                     {{$t('button.cv')}}
@@ -32,7 +32,7 @@
         
         <div class="absolute bottom-6 right-6 sm:bottom-8 sm:right-8">
             <h2 class="text-slate-500 dark:text-slate-400 text-sm font-medium transition-colors duration-300">
-                Updated 15-Sep-2025
+                Updated 16-Oct-2025
             </h2>
         </div>
         
