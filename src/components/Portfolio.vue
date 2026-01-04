@@ -38,7 +38,7 @@ const filterItems = () => {
 
         <!-- About Me Section -->
         <div class="container mx-auto">
-            <div class="bg-white dark:bg-slate-800 p-8 sm:p-12 lg:p-16 mb-20 lg:mb-32 rounded-2xl shadow-lg dark:shadow-2xl transition-all duration-300">
+            <div class="bg-white dark:bg-slate-800 p-8 sm:p-12 lg:p-16 rounded-2xl shadow-lg dark:shadow-2xl transition-all duration-300">
                 <!-- About Me Highlight -->
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
@@ -87,30 +87,11 @@ const filterItems = () => {
                         >
                     </div>
                 </div>
-
-                <!-- About Me Content - Outro -->
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-2xl sm:text-3xl mb-4 font-semibold text-slate-900 dark:text-white transition-colors duration-300">
-                        {{$t('text.and_more')}}
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-base sm:text-xl leading-relaxed transition-colors duration-300">
-                        {{$t('text.and_more_desc')}}
-                    </p>
-                    <div class="w-16 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mt-6 rounded-full"></div>
-                </div>
-
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <img 
-                            src="https://skillicons.dev/icons?i=git,cpp,cs,rust,tauri,java,spring,python,html,css,js,nodejs,npm,vite,vue,nest,tailwind,threejs,windows,linux,bash,debian,md,docker,sqlite,postgres,unreal,godot,blender,ps&theme=dark"
-                            alt="Techs image"
-                        >
-                </div>
-
             </div>
         </div>
 
         <!-- Projects Section -->
-        <div class="container mx-auto shadow-lg p-8 dark:bg-slate-800 rounded-2xl mb-16 sm:mb-auto">
+        <div class="container mx-auto shadow-lg p-8 dark:bg-slate-800 rounded-2xl my-16 sm:mb-auto">
             <!-- Projects Header -->
             <div class="text-center max-w-2xl mx-auto mb-12">
                 <h2 class="text-slate-900 dark:text-white mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight transition-colors duration-300">
